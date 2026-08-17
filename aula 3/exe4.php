@@ -1,19 +1,19 @@
 <?php
 $email = $_GET['email'];
-$n = 0;
-$p = 0;
 
-if(isset($_GET['noticia'])){
-    $n = 1;
-}
-if(isset($_GET['promo'])) {
-    $p = 1;
-}
+if(isset($_GET['noticias']) || isset($_GET['promo'])) {
+    
+    echo "Email: ". $email . "<br>";
 
-if($n == 1 || $p == 1) {
-    echo "Assinatura Concluída!";
+    if(isset($_GET['noticias'])) {
+        echo "Quer receber notícias <br>";
+    }
+    if(isset($_GET['promo'])) {
+        echo "Quer receber promoções <br>";
+    }
+
+    echo "Assinatura Concluída";
 } else {
-    echo "Assinatura Recusada!";
+    echo "Assinatura Recusada";
 }
-
 ?>
